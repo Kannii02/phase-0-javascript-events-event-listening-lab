@@ -1,17 +1,18 @@
-require ( './helpers.js' );
+import { addingEventListener } from '../index.js'; // Adjust the path if necessary
 
-const sinon = require('sinon');
+import './helpers.js';
+import sinon from 'sinon';
 
-describe("index.js", () => {
+describe('index.js', () => {
   let input;
 
-  beforeEach(function() {
+  beforeEach(function () {
     input = document.getElementById('button');
     sinon.spy(input, 'addEventListener');
-  })
+  });
 
-  it("binds an event listener in addingEventListener()", () => {
+  it('binds an event listener in addingEventListener()', () => {
     addingEventListener();
     expect(input.addEventListener.called).to.be.true;
-  })
-})
+  });
+});
